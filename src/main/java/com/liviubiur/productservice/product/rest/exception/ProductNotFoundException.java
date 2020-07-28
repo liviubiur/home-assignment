@@ -1,4 +1,4 @@
-package com.liviubiur.homeassignment.product.rest.exception;
+package com.liviubiur.productservice.product.rest.exception;
 
 public class ProductNotFoundException extends RuntimeException {
 

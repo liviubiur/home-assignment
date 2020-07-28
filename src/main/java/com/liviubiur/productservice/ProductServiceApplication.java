@@ -1,13 +1,13 @@
-package com.liviubiur.homeassignment;
+package com.liviubiur.productservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class HomeAssignmentApplication {
+public class ProductServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(HomeAssignmentApplication.class, args);
+		SpringApplication.run(ProductServiceApplication.class, args);
 	}
 
 }

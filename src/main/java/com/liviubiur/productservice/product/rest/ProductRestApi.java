@@ -1,10 +1,10 @@
-package com.liviubiur.homeassignment.product.rest;
+package com.liviubiur.productservice.product.rest;
 
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.ResponseEntity;
 
-import com.liviubiur.homeassignment.product.persistence.entity.Product;
+import com.liviubiur.productservice.product.persistence.entity.Product;
 
 public interface ProductRestApi {
 

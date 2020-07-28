@@ -1,9 +1,9 @@
-package com.liviubiur.homeassignment;
+package com.liviubiur.productservice;
 
-import com.liviubiur.homeassignment.product.persistence.entity.Product;
-import com.liviubiur.homeassignment.product.rest.ProductRestController;
-import com.liviubiur.homeassignment.product.rest.exception.ProductNotFoundAdvice;
-import com.liviubiur.homeassignment.product.service.ProductService;
+import com.liviubiur.productservice.product.persistence.entity.Product;
+import com.liviubiur.productservice.product.rest.ProductRestController;
+import com.liviubiur.productservice.product.rest.exception.ProductNotFoundAdvice;
+import com.liviubiur.productservice.product.service.ProductService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,7 +27,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(ProductRestController.class)
-public class ProductRestControllerTest {
+public class ProductServiceRestControllerTest {
 
   private MockMvc mockMvc;
 

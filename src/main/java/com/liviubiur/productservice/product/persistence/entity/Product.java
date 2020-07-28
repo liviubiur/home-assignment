@@ -1,4 +1,4 @@
-package com.liviubiur.homeassignment.product.persistence.entity;
+package com.liviubiur.productservice.product.persistence.entity;
 
 import java.time.LocalDateTime;
 

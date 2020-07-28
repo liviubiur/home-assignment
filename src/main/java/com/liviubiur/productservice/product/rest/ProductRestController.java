@@ -1,5 +1,6 @@
-package com.liviubiur.homeassignment.product.rest;
+package com.liviubiur.productservice.product.rest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.IanaLinkRelations;
@@ -13,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.liviubiur.homeassignment.product.persistence.entity.Product;
-import com.liviubiur.homeassignment.product.service.ProductService;
+import com.liviubiur.productservice.product.persistence.entity.Product;
+import com.liviubiur.productservice.product.service.ProductService;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
@@ -24,6 +25,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RequestMapping(value = "/products", produces = APPLICATION_JSON_VALUE)
 public class ProductRestController implements ProductRestApi {
 
+  @Autowired
   private final ProductService productService;
 
   public ProductRestController(

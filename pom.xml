@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.liviubiur</groupId>
-	<artifactId>home-assignment</artifactId>
-	<version>1.0.0-BUILD-SNAPSHOT</version>
-	<name>home-assignment</name>
-	<description>Home Assignment</description>
+	<artifactId>product-service</artifactId>
+	<version>1.0.0</version>
+	<name>product-service</name>
+	<description>RESTful service using Java and Spring Boot supporting the basic CRUD operations for products.</description>
 
 	<properties>
 		<java.version>11</java.version>

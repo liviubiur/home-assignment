@@ -1,4 +1,4 @@
-package com.liviubiur.homeassignment.swagger;
+package com.liviubiur.productservice.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +23,7 @@ public class SwaggerConfig {
   public Docket petApi() {
     return new Docket(DocumentationType.SWAGGER_2)
             .select()
-            .apis(RequestHandlerSelectors.basePackage("com.liviubiur.homeassignment.product.rest"))
+            .apis(RequestHandlerSelectors.basePackage("com.liviubiur.productservice.product.rest"))
             .paths(PathSelectors.any())
             .build().apiInfo(getApiInfo());
   }
@@ -31,11 +31,11 @@ public class SwaggerConfig {
   private ApiInfo getApiInfo() {
 
     return new ApiInfo(
-            "Home Assignment API",
-            "This is a challenge Spring Boot RESTful service",
+            "Product Service API",
+            "This is a Spring Boot RESTful service",
             "V1",
             "Terms of service",
-            new Contact("Mario Rossi", "https://www.challenge.com", "hello@challenge.com"),
+            new Contact("Mario Rossi", "https://www.liviubiur.com", "liviu@liviubiur.com"),
             "CC2020",
             "https://license-url.com",
             Collections.emptyList()

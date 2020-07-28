@@ -1,11 +1,11 @@
-package com.liviubiur.homeassignment.product.rest.assembler;
+package com.liviubiur.productservice.product.rest.assembler;
 
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.server.RepresentationModelAssembler;
 import org.springframework.stereotype.Component;
 
-import com.liviubiur.homeassignment.product.persistence.entity.Product;
-import com.liviubiur.homeassignment.product.rest.ProductRestController;
+import com.liviubiur.productservice.product.persistence.entity.Product;
+import com.liviubiur.productservice.product.rest.ProductRestController;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;

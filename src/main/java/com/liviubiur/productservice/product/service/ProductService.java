@@ -1,22 +1,24 @@
-package com.liviubiur.homeassignment.product.service;
+package com.liviubiur.productservice.product.service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.liviubiur.productservice.product.persistence.repository.ProductRepository;
+import com.liviubiur.productservice.product.rest.assembler.ProductResourceAssembler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.stereotype.Service;
 
-import com.liviubiur.homeassignment.product.persistence.entity.Product;
-import com.liviubiur.homeassignment.product.persistence.repository.ProductRepository;
-import com.liviubiur.homeassignment.product.rest.assembler.ProductResourceAssembler;
-import com.liviubiur.homeassignment.product.rest.exception.ProductNotFoundException;
+import com.liviubiur.productservice.product.persistence.entity.Product;
+import com.liviubiur.productservice.product.rest.exception.ProductNotFoundException;
 
 @Service
 public class ProductService {
 
+  @Autowired
   private final ProductRepository productRepository;
+  @Autowired
   private final ProductResourceAssembler assembler;
 
   @Autowired
