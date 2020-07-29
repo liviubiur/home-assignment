@@ -61,6 +61,7 @@ public class ProductServiceRestControllerTest {
   @Test
   public void getCorrectResponseById() throws Exception {
     given(productService.getById(ID)).willReturn(new EntityModel<>(product));
+    
     final ResultActions result = mockMvc.perform(get(BASE_PATH + "/" + ID));
     result.andExpect(status().isOk());
     verifyJson(result);
@@ -69,12 +70,13 @@ public class ProductServiceRestControllerTest {
   @Test
   public void allReturnsCorrectResponse() throws Exception {
     given(productService.getAll()).willReturn(Collections.singletonList(new EntityModel<>(product)));
+    
     final ResultActions result = mockMvc.perform(get(BASE_PATH));
     result.andExpect(status().isOk());
     result
             .andExpect(jsonPath("links[0].rel", is("self")))
             .andExpect(jsonPath("links[0].href", is(BASE_PATH)))
-            .andExpect(jsonPath("content[0].id", is(Integer.valueOf((int) ID))))
+            .andExpect(jsonPath("content[0].id", is((int) ID)))
             .andExpect(jsonPath("content[0].name", is(product.getName())))
             .andExpect(jsonPath("content[0].price", is(product.getPrice())))
             .andExpect(jsonPath("content[0].createdAt", is(product.getCreatedAt().format(formatter))));
@@ -83,6 +85,7 @@ public class ProductServiceRestControllerTest {
   @Test
   public void deleteReturnsCorrectResponse() throws Exception {
     given(productService.getById(ID)).willReturn(new EntityModel<>(product));
+    
     mockMvc
             .perform(delete(BASE_PATH + "/" + ID))
             .andExpect(status().isNoContent())
@@ -91,7 +94,7 @@ public class ProductServiceRestControllerTest {
 
   private void verifyJson(final ResultActions action) throws Exception {
     action
-            .andExpect(jsonPath("id", is(Integer.valueOf((int) product.getId()))))
+            .andExpect(jsonPath("id", is((int) product.getId())))
             .andExpect(jsonPath("name", is(product.getName())))
             .andExpect(jsonPath("price", is(product.getPrice())))
             .andExpect(jsonPath("createdAt", is(product.getCreatedAt().format(formatter))));
