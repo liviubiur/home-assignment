@@ -16,9 +16,7 @@ import com.liviubiur.productservice.product.rest.exception.ProductNotFoundExcept
 @Service
 public class ProductService {
 
-  @Autowired
   private final ProductRepository productRepository;
-  @Autowired
   private final ProductResourceAssembler assembler;
 
   @Autowired
@@ -29,7 +27,8 @@ public class ProductService {
   }
 
   public List<EntityModel<Product>> getAll() {
-    return productRepository.findAll().stream().map(assembler::toModel)
+    return productRepository.findAll().stream()
+        .map(assembler::toModel)
         .collect(Collectors.toList());
   }
 
