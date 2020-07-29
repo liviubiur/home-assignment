@@ -25,9 +25,11 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 @RequestMapping(value = "/products", produces = APPLICATION_JSON_VALUE)
 public class ProductRestController implements ProductRestApi {
 
-  @Autowired
+  private static final String ID = "/{id}";
+  
   private final ProductService productService;
 
+  @Autowired
   public ProductRestController(
       ProductService productService) {
     this.productService = productService;
@@ -41,7 +43,7 @@ public class ProductRestController implements ProductRestApi {
   }
 
   @Override
-  @GetMapping("/{id}")
+  @GetMapping(ID)
   public EntityModel<Product> getById(@PathVariable Long id) {
     return productService.getById(id);
   }
@@ -56,7 +58,7 @@ public class ProductRestController implements ProductRestApi {
   }
 
   @Override
-  @PutMapping("/{id}")
+  @PutMapping(ID)
   public ResponseEntity<?> updateProduct(@RequestBody Product product, @PathVariable Long id) {
     EntityModel<Product> updatedProduct = productService.updateProduct(product, id);
 
@@ -65,7 +67,7 @@ public class ProductRestController implements ProductRestApi {
   }
 
   @Override
-  @DeleteMapping("/{id}")
+  @DeleteMapping(ID)
   public ResponseEntity<?> deleteById(@PathVariable Long id) {
     productService.deleteById(id);
 
